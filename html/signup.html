@@ -1,0 +1,99 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="signup.js"></script>
+  <script src="notify.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <!--Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close">&times;</button>
+          <h4 class="modal-title text-center">Enter a username</h4>
+        </div>
+        <div class="modal-body text-center">
+          <p id="warning">username is mandatory</p>
+          <input type="text" id="user">
+          <button type="button" class="btn btn-default text-center" id="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header>
+    <nav class="navbar">
+      <img class="text-left" src="logo.png">
+    </nav>
+  </header>
+  <div class="container-fluid con">
+    <div class="row">
+      <div class="col-xs-6 col-md-6">
+        <img class="side1" src="Rubiks-Cube-PNG-Image.png">
+      </div>
+      <div class="col-xs-6 col-md-6 side2">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-4"><button class="btn box1 box" id="0">1</button></div>
+            <div class="col-xs-4"><button class="btn box2 box" id="1">2</button></div>
+            <div class="col-xs-4"><button class="btn box3 box" id="2">3</button></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"><button class="btn box4 box" id="3">4</button></div>
+            <div class="col-xs-4"><button class="btn box5 box" id="4">5</button></div>
+            <div class="col-xs-4"><button class="btn box6 box" id="5">6</button></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"><button class="btn box7 box" id="6">7</button></div>
+            <div class="col-xs-4"><button class="btn box8 box" id="7">8</button></div>
+            <div class="col-xs-4"><button class="btn box9 box" id="8">9</button></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><button class="btn box" id="box11"></button></div>
+            <div class="col-xs-3"><button class="btn box" id="box22"></button></div>
+            <div class="col-xs-3"><button class="btn box" id="box33"></button></div>
+            <div class="col-xs-3"><button class="btn box" id="box44"></button></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3"><input id="pass-1" type="password"></div>
+            <div class="col-xs-3"><input id="pass-2" type="password"></div>
+            <div class="col-xs-3"><input id="pass-3" type="password"></div>
+            <div class="col-xs-3"><input id="pass-4" type="password"></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-9">Please click here when done ---></div>
+
+            <div class="col-xs-3"><button class="btn" id="signup-btn">Signup</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <footer class="footer navbar-fixed-bottom">
+        <div class="text-left">
+          <h3>Color Grid Password Authentication System</h3>
+          <h4>Swapnil Salvi</h4>
+          <h4>802968172</h4>
+        </div>
+
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+</html>
