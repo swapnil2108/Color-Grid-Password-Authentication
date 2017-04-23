@@ -21,9 +21,35 @@ $(document).ready(function() {
       $("#warning").css("display", "block");
       console.log("please enter the user name");
     } else {
-      user = $("#user").val();
-      console.log(user);
+      var user = $("#user").val();
       $('#myModal').modal('toggle');
+      var myObj = {
+        user: user
+      };
+      console.log(user)
+      $.ajax({
+        url: "http://localhost:3000/login",
+        type: "POST",
+        data: JSON.stringify(myObj),
+        success: function(data) {
+          if (data !== "") {
+            swal({
+                title: "Username Already Exist !!!",
+                type: "error",
+                confirmButtonText: "Try Again !!",
+                closeOnConfirm: false
+              },
+              function(isConfirm) {
+                if (isConfirm) {
+                  location.reload();
+                }
+              });
+          } else {
+            console.log(data);
+            userServerResponse = data;
+          }
+        }
+      });
     }
   });
   $("#signup-btn").on("click", function() {
@@ -51,8 +77,9 @@ $(document).ready(function() {
         numbers.push($('#pass-' + i + '').val());
       }
       colors.push(box11, box22, box33, box44);
+      console.log($("#user").val());
       var myObj = {
-        user: user,
+        user: $("#user").val(),
         numbers: numbers,
         colors: colors
       }
@@ -61,8 +88,26 @@ $(document).ready(function() {
         url: "http://localhost:3000/signup",
         data: JSON.stringify(myObj),
         type: "POST",
-        success: function(data) {
-          console.log(data);
+        success: function(data,err) {
+          if(data){
+            swal({
+              title: "Sending your data !!!",
+              imageUrl: "loading.gif",
+              imageSize: "200x200",
+              timer: 2000,
+              showConfirmButton: false
+            },function(){
+            swal({
+              title: "Success !!!",
+              type: "success",
+              showConfirmButton: true
+            },function(isConfirm){
+              if(isConfirm){
+                window.location = "index.html";
+              }
+            });
+            });
+          }
         }
       });
     }
@@ -70,7 +115,6 @@ $(document).ready(function() {
   $(".close").on("click", function() {
     if ($("#user").val() == "") {
       $("#warning").css("display", "block");
-      console.log("please enter the user name");
     }
   });
   $('#myModal').modal('show');
@@ -333,47 +377,3 @@ $(document).ready(function() {
       document.getElementById("4").style.backgroundColor = $(this).css('backgroundColor');
       this.style.backgroundColor = "rgb(255, 255, 255)";
     } else if ($(this).css('backgroundColor') == "rgb(0, 128, 0)") {
-      document.getElementById("5").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(255, 182, 193)") {
-      document.getElementById("6").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(128, 0, 128)") {
-      document.getElementById("7").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(135, 206, 250)") {
-      document.getElementById("8").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    }
-  });
-  $("#box44").on("click", function() {
-    if ($(this).css('backgroundColor') == "rgb(255, 0, 0)") {
-      document.getElementById("0").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(0, 0, 255)") {
-      document.getElementById("1").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(0, 0, 0)") {
-      document.getElementById("2").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(245, 222, 179)") {
-      document.getElementById("3").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(255, 255, 0)") {
-      document.getElementById("4").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(0, 128, 0)") {
-      document.getElementById("5").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(255, 182, 193)") {
-      document.getElementById("6").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(128, 0, 128)") {
-      document.getElementById("7").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    } else if ($(this).css('backgroundColor') == "rgb(135, 206, 250)") {
-      document.getElementById("8").style.backgroundColor = $(this).css('backgroundColor');
-      this.style.backgroundColor = "rgb(255, 255, 255)";
-    }
-  });
-});
