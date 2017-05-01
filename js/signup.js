@@ -377,3 +377,47 @@ $(document).ready(function() {
       document.getElementById("4").style.backgroundColor = $(this).css('backgroundColor');
       this.style.backgroundColor = "rgb(255, 255, 255)";
     } else if ($(this).css('backgroundColor') == "rgb(0, 128, 0)") {
+      document.getElementById("5").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(255, 182, 193)") {
+      document.getElementById("6").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(128, 0, 128)") {
+      document.getElementById("7").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(135, 206, 250)") {
+      document.getElementById("8").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    }
+  });
+  $("#box44").on("click", function() {
+    if ($(this).css('backgroundColor') == "rgb(255, 0, 0)") {
+      document.getElementById("0").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(0, 0, 255)") {
+      document.getElementById("1").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(0, 0, 0)") {
+      document.getElementById("2").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(245, 222, 179)") {
+      document.getElementById("3").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(255, 255, 0)") {
+      document.getElementById("4").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(0, 128, 0)") {
+      document.getElementById("5").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(255, 182, 193)") {
+      document.getElementById("6").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(128, 0, 128)") {
+      document.getElementById("7").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    } else if ($(this).css('backgroundColor') == "rgb(135, 206, 250)") {
+      document.getElementById("8").style.backgroundColor = $(this).css('backgroundColor');
+      this.style.backgroundColor = "rgb(255, 255, 255)";
+    }
+  });
+});
